@@ -1,0 +1,425 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  user-select: text;
+ 
+}
+li{
+  list-style: none;
+}
+@keyframes scale {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes down2pg{
+  0%{
+    transform: translateY(150%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+$base-color:rgb(104, 0, 208);
+$webpage-padding : 40px;
+
+#index-page {
+    height: 100vh;
+    width: 100%;
+    padding: $webpage-padding;
+    overflow: hidden ;
+    position: relative;
+    
+  .first-part {
+    
+    width: 100%;
+    height: 90%;
+    position: relative;
+    
+    
+    .index-left {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        justify-content: space-around;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+       
+      h2 {
+        margin: 20;
+        margin-left: 0;
+        margin-bottom: 20px;
+
+      }
+      h1 {
+        font-size: 50px;
+        line-height: 65px;
+        transition: all .5s ease;
+        animation: slide 2s ease;
+        
+
+        @keyframes slide {
+          0%{
+            transform: translateX(100%);
+          }
+          100%{
+            transform: translateX(0);
+          }
+        }
+        #blue{
+            color:$base-color;
+            
+        }
+      }
+      p {
+        margin: 10px 0px 10px 0px;
+        font-size: 18px;
+        transition: all .5s ease;
+    animation: scale 2s ease;
+      }
+      .index-btns {
+        display: flex;
+
+        .btn {
+          min-width: 180px;
+          padding: 10px;
+          font-size: 15px;
+          border: none;
+          color: #ffffff;
+          border-radius: 25px 4px 25px 4px;
+          transition: all .5s ease;
+          animation: scale 2s ease;
+        }
+        .a{
+            background-color:$base-color;
+            margin-right: 40px;
+        }
+        .b{
+            color: $base-color;
+            border: 1.5px solid $base-color;
+        }
+      }
+      .achieved{
+        display: flex;
+        width: 100%;
+        justify-content:flex-start;
+        column-gap: 35px;
+        margin-top: 10px;
+        transition: all .5s ease;
+        animation: left 2s ease;
+        .numbers{
+            font-weight: 500;
+            font-size: 25px;
+        }
+        @keyframes left {
+          0%{
+            transform: translateX(-100%);
+          }
+          100%{
+            transform: translateX(0);
+          }
+        }
+      }
+      
+    }.index-right{
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        border-bottom-left-radius: 200px;
+        background-image: url(building-2-removebg-preview.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+        transition: all .5s ease;
+        animation: down 2s ease;
+       
+
+        @keyframes down{
+          0%{
+            transform: translateY(-150%);
+          }
+          100%{
+            transform: translateY(0%);
+          }
+        }
+
+        
+
+        .menu{
+          display: flex;
+          position: absolute;
+          top: 0px;
+          color:$base-color;
+          font-weight: 500;
+          justify-content: space-around;
+          width: 100%;
+
+          li{
+            transition: all .5s;
+            padding: 10px 15px;
+            
+            &.acitve{
+              background-color:$base-color;
+            border-radius: 50px;
+            color:white;
+            }
+          }
+          li:hover{
+            cursor: pointer;
+            background-color:$base-color;
+            border-radius: 50px;
+            color:white;
+
+            
+            
+          }
+        }
+      }
+  }
+  .second-part{
+    height: 10%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    color: $base-color;
+    justify-content:space-around;
+    font-weight: bold;
+    background-color: rgb(222, 222, 222);
+    border-radius: 100px;
+    margin-top: 20px;
+    transition: all .5s ease;
+    animation: up 2s ease;
+        
+
+        @keyframes up {
+          0%{
+            transform: translateY(100%);
+          }
+          100%{
+            transform: translateY(0);
+          }
+        }
+    
+
+    .names{
+        display: flex;
+        
+        
+
+       
+    }
+  }
+}
+
+// ------------------------------SECOND PAGE STYLING--------------------------------------//
+
+#second-page{
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  padding: $webpage-padding;
+
+  .secondpg-left{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-top-right-radius: 200px;
+    background-image: url(./quadruplex-house-isolated-transparent-background_191095-26865-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: all .5s ease;
+    animation: down2pg 2s ease;
+    
+  }
+  .secondpg-right{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+
+
+   p{
+    font-size: 20px;
+   }
+    
+  }
+}
+
+@media  screen and (max-width:767px) {
+  #index-page {
+    height:50vh;
+    width: 100%;
+    padding: 15px;
+    
+  .first-part {
+    
+    width: 100%;
+    height: 90%;
+    position: relative;
+    
+    
+    .index-left {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        justify-content: space-around;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+       
+      h2 {
+        margin: 0;
+        margin-bottom: 10px;
+        font-size: 16px;
+
+      }
+      h1 {
+        font-size: 20px;
+        line-height: 25px;
+        
+        
+
+        
+        
+      }
+      p {
+        margin: 5px 0px 5px 0px;
+        font-size: 12px;
+      }
+      .index-btns {
+        display: flex;
+
+        .btn {
+          min-width: 80px;
+          padding: 5px;
+          font-size: 12px;
+          
+          
+          border-radius: 15px 4px 14px 4px;
+          
+        }
+        .a{
+            background-color:$base-color;
+            margin-right: 10px;
+        }
+        .b{
+            color: $base-color;
+            border: 1.5px solid $base-color;
+        }
+      }
+      .achieved{
+        column-gap: 30px;
+        margin-top: 5px;
+        row-gap: 2px;
+        font-size: 10px;
+       
+        .numbers{
+            font-weight: 500;
+            font-size:14px;
+        }
+        
+      }
+      
+    }.index-right{
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        border-bottom-left-radius: 200px;
+        
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+
+        
+
+        .menu{
+          top: 0px;
+          font-weight:normal;
+          width: 100%;
+          font-size: 10px;
+          padding: 0;
+
+          li{
+            transition: all .5s;
+            padding: 3px 4px;
+            
+            &.acitve{
+              background-color:$base-color;
+            border-radius: 50px;
+           
+            }
+          }
+          li:hover{
+            cursor: pointer;
+            background-color:$base-color;
+            border-radius: 50px;
+            color:white;
+
+            
+            
+          }
+        }
+      }
+  }
+  .second-part{
+    height: 8%;
+    font-size: 14px;
+    font-weight:600;
+    margin-top: 15px;
+
+    .names{
+        display: flex;
+        font-size: 14px;
+    }
+  }
+}
+
+
+// media query for second page
+
+#second-page{
+  width: 100%;
+  overflow: hidden;
+  height: 50vh;
+  display: flex;
+  padding:15px;
+
+  
+  .secondpg-right{
+    padding-left: 10px;
+    
+   p{
+    font-size: 12px;
+   }
+    
+  }
+}
+}
+
